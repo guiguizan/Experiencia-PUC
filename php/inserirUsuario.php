@@ -3,7 +3,6 @@
 include "conexao.php";
 
 
-
 if($con){
 
     /*
@@ -38,7 +37,7 @@ if($con){
 
     $nome = "Afonso";
     $dataDeNascimento = "2020-05-13";
-    $email = "afonso@bol";
+    $email = "kamyllewilgozzd@gmail.com";
     $senha = "lutero2";
     $numeroDoCartao = "20";
     $validadeDoCartao = "2028-03-08";
@@ -47,10 +46,16 @@ if($con){
     $cpf = "05150321606";
 
 
-    $query = "INSERT INTO `usuarios`(`id`, `nome`, `dataDeNascimento`, `email`, `senha`, `numeroDoCartao`, `validadeDoCartao`, `codigoDoCartao`, `nomeDoTitular`, `cpf`) VALUES 
-    (null, '$nome', '$dataDeNascimento', '$email', '$senha', '$numeroDoCartao', '$validadeDoCartao', '$codigoDoCartao', '$nomeDoTitular', '$cpf')";
+    $query = "INSERT INTO `usuarios`(`id`, `nome`, `dataDeNascimento`, `email`, `senha`, `numeroDoCartao`, `validadeDoCartao`, `codigoDoCartao`, `nomeDoTitular`, `cpf`, `emailValidado`) VALUES 
+    (null, '$nome', '$dataDeNascimento', '$email', '$senha', '$numeroDoCartao', '$validadeDoCartao', '$codigoDoCartao', '$nomeDoTitular', '$cpf', '0')";
 
-    mysqli_query($con, $query);
+
+    if (mysqli_query($con, $query)){
+        echo $id = $con->insert_id;
+        include "envioDeEmail.php";
+    }else{
+        echo "Erro ao cadastrar usuário. Tente novamente!";
+    }
 
 
 

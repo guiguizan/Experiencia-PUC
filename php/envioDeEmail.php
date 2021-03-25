@@ -6,10 +6,14 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 //Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
+
+//$email = 
+//$nome = 
+//$id = 
 
 try {
     //Server settings
@@ -24,13 +28,13 @@ try {
 
     //Recipients
     $mail->setFrom('your.moovies@gmail.com', 'Moovies');
-    $mail->addAddress('kamyllewilgozzd@gmail.com', 'Kamylle');     //Add a recipient
+    $mail->addAddress($email, $nome);     //Add a recipient
     
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Confirmar seu e-mail'; //assunto
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>'; //envia email em html
+    $mail->Body    = 'Olá ' . $nome . '<br>' . 'para confirmar seu e-mail, acesse esse link: http://localhost/Moovies/php/verificarEmailUsuario.php?id=' . $id; //envia email em html
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients'; //envia email sem html
 
     $mail->send();
