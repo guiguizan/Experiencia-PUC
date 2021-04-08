@@ -1,7 +1,7 @@
 
-<html>
+<html lang="pt-br">
     <head>
-    
+      <meta charset="UTF-8">
             <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
      
     </head>   
@@ -25,16 +25,23 @@
                 <img src="../imagens/logoProjetoPNG.png" id="icon"  />
               </div>
           
-              <form>
-                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
-                <input type="text" id="email" class="fadeIn second" name="login" placeholder="E-mail">
-                <input style="width: 50%; float: left; margin-left: 30px;" type="text" id="email" class="fadeIn second" name="login" placeholder="Cod.">
-                <input style="width: 25%; float: right; margin-left: 75px;" type="text" id="email" class="fadeIn second" name="login" placeholder="Cod.">
-                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Senha">
-                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Confirmar senha">
-      
+              <form method="post" action="../php/inserirUsuario.php">
+                <input type="text" id="login" class="fadeIn second" name="nome" placeholder="Nome">
+                <input type="text" id="email" class="fadeIn second" name="email" placeholder="E-mail">
+                <input type="text" id="password" class="fadeIn third" name="senha" placeholder="Senha">
+                <input type="text" id="dataDeNascimento" class="fadeIn third" name="dataDeNascimento" placeholder="Data de nascimento">
+                <input type="text" id="numeroDoCartao" class="fadeIn third" name="numeroDoCartao" placeholder="Número do cartão">
+                <input type="text" id="validadeDoCartao" class="fadeIn third" name="validadeDoCartao" placeholder="Validade do cartão">
+                <input type="text" id="codigoDoCartao" class="fadeIn third" name="codigoDoCartao" placeholder="Código do cartão">
+                <input type="text" id="nomeDoTitular" class="fadeIn third" name="nomeDoTitular" placeholder="Nome do titular">
+                <input type="text" id="cpf" class="fadeIn third" name="cpf" placeholder="CPF">
+
+
+
+
+
                 <br>
-                <input type="submit" class="fadeIn fourth" value="Log In">
+                <input type="submit" class="fadeIn fourth" value="Cadastrar">
               </form>
           
              
