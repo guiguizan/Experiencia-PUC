@@ -46,8 +46,6 @@ if($con){
     //$nomeDoTitular = "eu mesmo, afonso";
     //$cpf = "05150321606";
 
-    $senha = md5($senha);
-
     $query = "INSERT INTO `usuarios`(`id`, `nome`, `dataDeNascimento`, `email`, `senha`, `numeroDoCartao`, `validadeDoCartao`, `codigoDoCartao`, `nomeDoTitular`, `cpf`, `emailValidado`) VALUES 
     (null, '$nome', '$dataDeNascimento', '$email', '$senha', '$numeroDoCartao', '$validadeDoCartao', '$codigoDoCartao', '$nomeDoTitular', '$cpf', '0')";
 
