@@ -1,6 +1,6 @@
 <?php
 
-include "conexao.php";
+require "conexao.php";
 
 
 if($con){
@@ -13,9 +13,8 @@ if($con){
     $email = $_POST ['email'];
     echo $email;
 
-    $senha = $_POST ['senha'];
+    $senha = $_POST ['senha_hash'];
     echo $senha;
-        
 
     $dataDeNascimento = $_POST ['dataDeNascimento'];
     echo $dataDeNascimento;
@@ -46,17 +45,18 @@ if($con){
     //$nomeDoTitular = "eu mesmo, afonso";
     //$cpf = "05150321606";
 
-    $senha = md5($senha);
-
     $query = "INSERT INTO `usuarios`(`id`, `nome`, `dataDeNascimento`, `email`, `senha`, `numeroDoCartao`, `validadeDoCartao`, `codigoDoCartao`, `nomeDoTitular`, `cpf`, `emailValidado`) VALUES 
     (null, '$nome', '$dataDeNascimento', '$email', '$senha', '$numeroDoCartao', '$validadeDoCartao', '$codigoDoCartao', '$nomeDoTitular', '$cpf', '0')";
+
 
     if (mysqli_query($con, $query)){
         echo $id = $con->insert_id;
         include "envioDeEmail.php";
     }else{
         echo "Erro ao cadastrar usuário. Tente novamente!";
+        echo mysqli_error($con);
     }
+
 
 
 
