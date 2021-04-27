@@ -32,7 +32,7 @@ if($con){
     echo $nomeDoTitular;
 
     $cpf = $_POST ['cpf'];
-    echo $cpf;
+    echo $cpf;    
 
 
     //$nome = "Afonso";
