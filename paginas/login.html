@@ -2,6 +2,11 @@
 <html>
     <head>
       <link rel="stylesheet" type="text/css" href="../css/login.css">
+
+    <script type="text/javascript" src="../javascript/jquery-3.3.1.js"></script>
+    <script src='../javascript/sjcl.js'></script>
+
+    <script src="../javascript/index.js"></script>
     </head>   
     <body>
     
@@ -18,16 +23,17 @@
                 <img src="../imagens/logoProjetoPNG.png" id="icon"  />
               </div>
           
-              <form method="post" action="../php/login.php">
+              <form id="form-login">
 
                 <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Usuario">
                 <input type="text" id="senha" class="fadeIn third" name="senha" placeholder="Senha">
+                <input type="hidden" name="senha_hash" id="senha_hash" />
                 <br>
                 
                 <br>
                 <br>
           
-                <input type="submit" name="entrar" id="entrar" class="fadeIn fourth" value="Entrar">
+                <button id="bAcessar"> Entrar </button>
               </form>
           
               <div id="formFooter">
