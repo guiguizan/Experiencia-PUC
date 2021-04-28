@@ -4,6 +4,10 @@
       <meta charset="UTF-8">
             <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
      
+    <script type="text/javascript" src="../javascript/jquery-3.3.1.js"></script>
+    <script src='../javascript/sjcl.js'></script>
+
+    <script src="../javascript/cadastro/index.js"></script>
     </head>   
 
 
@@ -25,11 +29,12 @@
                 <img src="../imagens/logoProjetoPNG.png" id="icon"  />
               </div>
           
-              <form method="post" action="../php/inserirUsuario.php">
+              <form id="form-cadastro">
                 
                 <input type="text" id="login" class="fadeIn second" name="nome" placeholder="Nome">
                 <input type="text" id="email" class="fadeIn second" name="email" placeholder="E-mail">
-                <input type="text" id="password" class="fadeIn third" name="senha" placeholder="Senha">
+                <input type="text" id="password" class="fadeIn third" placeholder="Senha">
+                <input type="hidden" name="senha_hash" id="senha_hash" />
                 <input type="text" id="dataDeNascimento" class="fadeIn third" name="dataDeNascimento" placeholder="Data de nascimento">
                 <input type="text" id="numeroDoCartao" class="fadeIn third" name="numeroDoCartao" placeholder="Número do cartão">
                 <input type="text" id="validadeDoCartao" class="fadeIn third" name="validadeDoCartao" placeholder="Validade do cartão">
@@ -39,7 +44,7 @@
 
 
                 <br>
-                <input type="submit" class="fadeIn fourth" value="Cadastrar">
+                <button id="bCadastrar">Cadastrar</button>
               </form>
           
              

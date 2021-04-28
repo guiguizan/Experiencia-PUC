@@ -1,44 +1,50 @@
 
+
 $(document).ready(function(){
 
-	$("#bAcessar").click(function(){
+
+	$("#bCadastrar").click(function(){
 		
-		var sha256 = sjcl.hash.sha256.hash($('#senha').val());
+		var sha256 = sjcl.hash.sha256.hash($('#password').val());
 		var sha256_hexa = sjcl.codec.hex.fromBits(sha256);
 
 		$("#senha_hash").val(sha256_hexa);
 
-		fLocalComunicaServidor('form-login')
+		fLocalComunicaServidor('form-cadastro', 'inserirUsuario')
 
 		return false;
 	});
+
 });
 
-function fLocalComunicaServidor(formulario){
+
+function fLocalComunicaServidor(formulario, arquivo){
 
 	var dados = $("#"+formulario).serialize();
 
 	$.ajax({
 		type:"POST",
 		dataType: "json",
-		url: "../php/login.php",
+		url: "../php/" + arquivo + ".php",
 		data: dados,
 		success: function(retorno){
 
-			if(retorno.funcao == "login") 
+			if(retorno.funcao == "inserirUsuario") 
 			{
 				if(retorno.status == "s")
 				{
 					alert(retorno.mensagem);
-					window.location.href = "../paginas/toma.html";
+					window.location.href = "../../paginas/login.html";
 				}
 				else
 				{
-					alert("Nao encontrado");
+					alert(retorno.mensagem);
 				}
 			}
 		}
+		
 	});
+
 }
 
 
