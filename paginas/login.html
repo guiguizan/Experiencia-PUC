@@ -1,55 +1,48 @@
-
 <html>
-    <head>
-      <link rel="stylesheet" type="text/css" href="../css/login.css">
 
-    <script type="text/javascript" src="../javascript/jquery-3.3.1.js"></script>
-    <script src='../javascript/sjcl.js'></script>
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/login.css">
 
-    <script src="../javascript/index.js"></script>
-    </head>   
-    <body>
-    
+  <script type="text/javascript" src="../javascript/jquery-3.3.1.js"></script>
+  <script src='../javascript/sjcl.js'></script>
 
-        <div class="wrapper fadeInDown">
-            <div id="formContent">
-          
-                <h2 class="active"> Sign In </h2>
-              <a href="../paginas/cadastro.html">
-                <h2 class="inactive underlineHover">Sign Up </h2>
-            </a>
-          
-              <div class="fadeIn first">
-                <img src="../imagens/logoProjetoPNG.png" id="icon"  />
-              </div>
-          
-              <form id="form-login">
+  <script src="../javascript/index.js"></script>
+</head>
 
-                <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Usuario">
-                <input type="text" id="senha" class="fadeIn third" name="senha" placeholder="Senha">
-                <input type="hidden" name="senha_hash" id="senha_hash" />
-                <br>
-                
-                <br>
-                <br>
-          
-                <button id="bAcessar"> Entrar </button>
-              </form>
-          
-              <div id="formFooter">
-                <a class="underlineHover" href="#">Esqueceu a senha?</a>
-              </div>
-          
-            </div>
-          </div>
-    </body>
-    </html>
+<body>
 
 
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
 
+      <h2 class="active"> Entrar </h2>
+      <a href="../paginas/cadastro.html">
+        <h2 class="inactive underlineHover"> Cadastrar </h2>
+      </a>
 
+      <div class="fadeIn first">
+        <img src="../imagens/logoProjetoPNG.png" id="icon" />
+      </div>
 
+      <form id="form-login">
 
+        <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="E-mail">
+        <input type="text" id="senha" class="fadeIn third" name="senha" placeholder="Senha">
+        <input type="hidden" name="senha_hash" id="senha_hash" />
+        <br>
 
+        <br>
+        <br>
 
+        <button id="bAcessar"> Entrar </button>
+      </form>
 
+      <div id="formFooter">
+        <a class="underlineHover" href="../paginas/esqueciMinhaSenha.html">Esqueceu a senha?</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

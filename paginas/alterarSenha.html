@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/esqueciMinhaSenha.css">
+
+  <script type="text/javascript" src="../javascript/jquery-3.3.1.js"></script>
+  <script src='../javascript/sjcl.js'></script>
+
+  <script src="../javascript/alterarSenha.js"></script>
+</head>
+
+<body>
+
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+
+      <h2 class="active"> Alterar senha </h2>
+    
+
+      <div class="fadeIn first">
+        <img src="../imagens/logoProjetoPNG.png" id="icon" />
+      </div>
+
+      <form id="formulario">
+
+        <input type="text" id="senha" class="fadeIn second" name="senha" placeholder="Nova Senha">
+        <input type="hidden" name="senha_hash" id="senha_hash" />
+        <input type="hidden" name="id" id="id"/>
+        <br>
+
+        <br>
+        <br>
+
+        <input type = "button" id ="bAlterar" value = "Alterar senha"> </input>
+
+      </form>
+
+      <div id="formFooter">
+        <a class="underlineHover" href="../paginas/login.html">Voltar</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

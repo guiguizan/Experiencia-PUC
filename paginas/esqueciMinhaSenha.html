@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/esqueciMinhaSenha.css">
+
+  <script type="text/javascript" src="../javascript/jquery-3.3.1.js"></script>
+  <script src='../javascript/sjcl.js'></script>
+
+  <script>
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let feedback = urlParams.get('envio');
+  
+    if(feedback == 1){
+      alert("Enviamos um e-mail com um link para voce alterar sua senha!");
+    }
+  </script>
+</head>
+
+<body>
+
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+
+      <h2 class="active"> Recuperar senha </h2>
+    
+
+      <div class="fadeIn first">
+        <img src="../imagens/logoProjetoPNG.png" id="icon" />
+      </div>
+
+      <form method="POST" action="../php/envioDeEmailRecuperarSenha.php">
+
+        <input type="text" id="email" class="fadeIn second" name="email" placeholder="E-mail">
+        <br>
+
+        <br>
+        <br>
+
+        <input type = "submit" value = "Recuperar senha"> </input>
+      </form>
+
+      <div id="formFooter">
+        <a class="underlineHover" href="../paginas/login.html">Voltar</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

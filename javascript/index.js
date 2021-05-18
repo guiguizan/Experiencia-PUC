@@ -9,7 +9,7 @@ $(document).ready(function(){
 		$("#senha_hash").val(sha256_hexa);
 
 		fLocalComunicaServidor('form-login')
-
+		window.location.href = "../php/redirecionarUsuarioLogin.php";
 		return false;
 	});
 });
@@ -24,19 +24,6 @@ function fLocalComunicaServidor(formulario){
 		url: "../php/login.php",
 		data: dados,
 		success: function(retorno){
-
-			if(retorno.funcao == "login") 
-			{
-				if(retorno.status == "s")
-				{
-					alert(retorno.mensagem);
-					window.location.href = "../paginas/toma.html";
-				}
-				else
-				{
-					alert("Nao encontrado");
-				}
-			}
 		}
 	});
 }
